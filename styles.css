@@ -1,0 +1,79 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Marck Script', cursive, Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 100%;
+}
+
+:root {
+    --dark-background: #4A4E69;
+    --medium-background: #4a4e693f;
+    --light-background: #F2E9E4;
+    --light-accent: #C9ADA7;
+}
+
+body {
+    padding: 1rem;
+    font-size: 2rem;
+    background-color: var(--light-background);
+}
+
+/* Library Styles */
+
+#library {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.library-listing {
+    padding: 1rem;
+    background-color: var(--light-accent);
+    border-radius: 1rem;
+}
+
+/* Form Styles */
+
+.add-book {
+    position: fixed;
+    width: 40vw;
+    height: 400px;
+    top: 50%;
+    left: 50%;
+    margin-top: -200px;
+    margin-left: -20%;
+    padding: 1.5rem;
+    background-color: var(--dark-background);
+    color: var(--light-background);
+    border-radius: 1rem;
+    box-shadow: 0.5rem 0.5rem 1rem rgba(11, 3, 49, 0.71);
+}
+
+.add-book h3 {
+    text-align: center;
+}
+
+.add-book > form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.add-book > button {
+    position: absolute;
+    background: none;
+    color: var(--light-background);
+    top: 20px;
+    right: 20px;
+    border: none;
+}
+
+.add-book > button:hover {
+    color: var(--light-accent);
+}
+
+form > input {
+    border-radius: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
