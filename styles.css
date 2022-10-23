@@ -7,7 +7,7 @@
 
 :root {
     --dark-background: #4A4E69;
-    --medium-background: #4a4e693f;
+    --darker-background: #2b2e3d;
     --light-background: #F2E9E4;
     --light-accent: #C9ADA7;
 }
@@ -16,6 +16,18 @@ body {
     padding: 1rem;
     font-size: 2rem;
     background-color: var(--light-background);
+}
+
+#addBookButton {
+    padding: 0.5rem;
+    background-color: var(--dark-background);
+    color: var(--light-background);
+    border-radius: 0.5rem;
+    border: none;
+}
+
+#addBookButton:hover {
+    background-color: var(--darker-background);
 }
 
 /* Library Styles */
@@ -34,7 +46,9 @@ body {
 
 /* Form Styles */
 
-.add-book {
+#add-book {
+    display: none;
+
     position: fixed;
     width: 40vw;
     height: 400px;
@@ -49,17 +63,17 @@ body {
     box-shadow: 0.5rem 0.5rem 1rem rgba(11, 3, 49, 0.71);
 }
 
-.add-book h3 {
+#add-book h3 {
     text-align: center;
 }
 
-.add-book > form {
+#add-book > form {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
 }
 
-.add-book > button {
+#close-modal {
     position: absolute;
     background: none;
     color: var(--light-background);
@@ -68,7 +82,7 @@ body {
     border: none;
 }
 
-.add-book > button:hover {
+#close-modal:hover {
     color: var(--light-accent);
 }
 

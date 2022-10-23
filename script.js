@@ -1,174 +1,12 @@
 const library = document.getElementById("library")
+let addBookModal = false;
+
+const addBookButton = document.getElementById("addBookButton");
+addBookButton.addEventListener("click", toggleModal);
+const closeAddBookModal = document.getElementById("close-modal")
+closeAddBookModal.addEventListener("click", toggleModal);
 
 let myLibrary = [
-    {
-        title: "Dumb Book",
-        author: "Dumb Man",
-        page_count: "200",
-        read_status: "Unread"
-    },
-    {
-        title: "Siddhartha",
-        author: "Herman Hesse",
-        page_count: "200",
-        read_status: "Unread"
-    },
-    {
-        title: "Dumb Book",
-        author: "Dumb Man",
-        page_count: "200",
-        read_status: "Unread"
-    },
-    {
-        title: "Siddhartha",
-        author: "Herman Hesse",
-        page_count: "200",
-        read_status: "Unread"
-    },
-    {
-        title: "Dumb Book",
-        author: "Dumb Man",
-        page_count: "200",
-        read_status: "Unread"
-    },
-    {
-        title: "Siddhartha",
-        author: "Herman Hesse",
-        page_count: "200",
-        read_status: "Unread"
-    },
-    {
-        title: "Dumb Book",
-        author: "Dumb Man",
-        page_count: "200",
-        read_status: "Unread"
-    },
-    {
-        title: "Siddhartha",
-        author: "Herman Hesse",
-        page_count: "200",
-        read_status: "Unread"
-    },
-    {
-        title: "Dumb Book",
-        author: "Dumb Man",
-        page_count: "200",
-        read_status: "Unread"
-    },
-    {
-        title: "Siddhartha",
-        author: "Herman Hesse",
-        page_count: "200",
-        read_status: "Unread"
-    },
-    {
-        title: "Dumb Book",
-        author: "Dumb Man",
-        page_count: "200",
-        read_status: "Unread"
-    },
-    {
-        title: "Siddhartha",
-        author: "Herman Hesse",
-        page_count: "200",
-        read_status: "Unread"
-    },
-    {
-        title: "Dumb Book",
-        author: "Dumb Man",
-        page_count: "200",
-        read_status: "Unread"
-    },
-    {
-        title: "Siddhartha",
-        author: "Herman Hesse",
-        page_count: "200",
-        read_status: "Unread"
-    },
-    {
-        title: "Dumb Book",
-        author: "Dumb Man",
-        page_count: "200",
-        read_status: "Unread"
-    },
-    {
-        title: "Siddhartha",
-        author: "Herman Hesse",
-        page_count: "200",
-        read_status: "Unread"
-    },
-    {
-        title: "Dumb Book",
-        author: "Dumb Man",
-        page_count: "200",
-        read_status: "Unread"
-    },
-    {
-        title: "Siddhartha",
-        author: "Herman Hesse",
-        page_count: "200",
-        read_status: "Unread"
-    },
-    {
-        title: "Dumb Book",
-        author: "Dumb Man",
-        page_count: "200",
-        read_status: "Unread"
-    },
-    {
-        title: "Siddhartha",
-        author: "Herman Hesse",
-        page_count: "200",
-        read_status: "Unread"
-    },
-    {
-        title: "Dumb Book",
-        author: "Dumb Man",
-        page_count: "200",
-        read_status: "Unread"
-    },
-    {
-        title: "Siddhartha",
-        author: "Herman Hesse",
-        page_count: "200",
-        read_status: "Unread"
-    },
-    {
-        title: "Dumb Book",
-        author: "Dumb Man",
-        page_count: "200",
-        read_status: "Unread"
-    },
-    {
-        title: "Siddhartha",
-        author: "Herman Hesse",
-        page_count: "200",
-        read_status: "Unread"
-    },
-    {
-        title: "Dumb Book",
-        author: "Dumb Man",
-        page_count: "200",
-        read_status: "Unread"
-    },
-    {
-        title: "Siddhartha",
-        author: "Herman Hesse",
-        page_count: "200",
-        read_status: "Unread"
-    },
-    {
-        title: "Dumb Book",
-        author: "Dumb Man",
-        page_count: "200",
-        read_status: "Unread"
-    },
-    {
-        title: "Siddhartha",
-        author: "Herman Hesse",
-        page_count: "200",
-        read_status: "Unread"
-    },
     {
         title: "Dumb Book",
         author: "Dumb Man",
@@ -200,12 +38,14 @@ function Book(title, author, page_count, read_status) { // Constructor
     myLibrary.append(new_book);
 } */
 
+
 function displayLibrary () {
     myLibrary.forEach(element => {
         const new_book = buildCard(element);
         library.appendChild(new_book);
     });
 }
+
 
 function buildCard (book) {
     // Create library book card and add CSS class to it
@@ -229,6 +69,21 @@ function buildCard (book) {
     card.appendChild(card_read_status);
 
     return(card);
+}
+
+function toggleModal() {
+    const modal = document.getElementById("add-book");
+    console.log(modal);
+    if (addBookModal === false) {
+        addBookButton.disabled = true;
+        modal.style.display = 'block';
+        addBookModal = true;
+    } else {
+        modal.style.display = 'none';
+        addBookModal = false;
+        addBookButton.disabled = false;
+    }
+    console.log(addBookModal);
 }
 
 displayLibrary();
