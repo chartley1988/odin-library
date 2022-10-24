@@ -16,6 +16,13 @@ body {
     padding: 1rem;
     font-size: 2rem;
     background-color: var(--light-background);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+h1 {
+    text-align: center;
 }
 
 #addBookButton {
@@ -28,6 +35,10 @@ body {
 
 #addBookButton:hover {
     background-color: var(--darker-background);
+}
+
+.disabled {
+    pointer-events: none;
 }
 
 /* Library Styles */
@@ -51,10 +62,10 @@ body {
 
     position: fixed;
     width: 40vw;
-    height: 400px;
+    height: 600px;
     top: 50%;
     left: 50%;
-    margin-top: -200px;
+    margin-top: -300px;
     margin-left: -20%;
     padding: 1.5rem;
     background-color: var(--dark-background);
@@ -70,7 +81,7 @@ body {
 #add-book > form {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1rem;
 }
 
 #close-modal {
@@ -80,6 +91,12 @@ body {
     top: 20px;
     right: 20px;
     border: none;
+}
+
+.read-status-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
 }
 
 #close-modal:hover {

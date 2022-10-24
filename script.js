@@ -76,12 +76,14 @@ function toggleModal() {
     console.log(modal);
     if (addBookModal === false) {
         addBookButton.disabled = true;
+        addBookButton.classList.add("disabled");
         modal.style.display = 'block';
         addBookModal = true;
     } else {
         modal.style.display = 'none';
         addBookModal = false;
         addBookButton.disabled = false;
+        addBookButton.classList.remove("disabled");
     }
     console.log(addBookModal);
 }
