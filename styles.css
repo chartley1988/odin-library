@@ -12,6 +12,18 @@
     --light-accent: #C9ADA7;
 }
 
+button {
+    padding: 0.5rem;
+    background-color: var(--dark-background);
+    color: var(--light-background);
+    border-radius: 0.5rem;
+    border: none;
+}
+
+button:hover {
+    background-color: var(--darker-background);
+}
+
 body {
     padding: 1rem;
     font-size: 2rem;
@@ -108,3 +120,16 @@ form > input {
     padding-left: 1rem;
     padding-right: 1rem;
 }
+
+form > button {
+    background-color: var(--light-background);
+    color: var(--darker-background);
+    border-radius: 0.5rem;
+    border: none;
+}
+
+form > button:hover {
+    background-color: var(--light-accent);
+    border: none;
+}
+
