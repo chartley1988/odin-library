@@ -92,7 +92,7 @@ function buildCard (book, index) {
     removeBook.classList.add('modal-freeze');
     removeBook.textContent = 'Remove Book';
     removeBook.addEventListener('click', () => {
-        myLibrary.shift(index);
+        myLibrary.splice(index, 1);
         console.log(library);
         console.log(myLibrary);
         displayLibrary();
