@@ -37,7 +37,7 @@ h1 {
     text-align: center;
 }
 
-#addBookButton {
+#addBookModal {
     padding: 0.5rem;
     background-color: var(--dark-background);
     color: var(--light-background);
@@ -45,7 +45,7 @@ h1 {
     border: none;
 }
 
-#addBookButton:hover {
+#addBookModal:hover {
     background-color: var(--darker-background);
 }
 
@@ -57,7 +57,7 @@ h1 {
 
 #library {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1rem;
 }
 

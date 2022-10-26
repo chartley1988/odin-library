@@ -1,10 +1,13 @@
 let library = document.getElementById("library")
 let addBookModal = false; // Status whether modal is open or closed.
 
-const addBookButton = document.getElementById("addBookButton");
-addBookButton.addEventListener("click", toggleModal);
+const openBookModal = document.getElementById("openBookModal");
+openBookModal.addEventListener("click", toggleModal);
 const closeAddBookModal = document.getElementById("close-modal")
 closeAddBookModal.addEventListener("click", toggleModal);
+const addBookButton = document.getElementById('add-book-button');
+console.log(addBookButton);
+addBookButton.addEventListener("click", addBookToLibrary);
 
 let SampleBook = new Book("Game of Thrones", "George RR Martin", 600, 'unread');
 let SampleBook1 = new Book("Feast of Crows", "George RR Martin", 600, 'unread');
@@ -29,15 +32,22 @@ Book.prototype.change_read_status = function() {
     return this.read_status;
 }
 
-/* function addBookToLibrary(title, author, page_count, read_status) {
-    const new_book = Book(title, author, page_count, read_status)
-    if myLibrary.includes(new_book) {
-        myLibrary.splice(new_book)
-        myLibrary.append(new_book)
-        return;
-    }
-    myLibrary.append(new_book);
-} */
+function addBookToLibrary() {
+    const title = document.getElementById('input-book-title').value;
+    console.log(title);
+    const author = document.getElementById('input-book-author').value;
+    console.log(author);
+    const page_count = document.getElementById('input-book-pages').value;
+    console.log(page_count);
+    const read_status = document.querySelector('input[name="read-status"]:checked').value;
+
+    const new_book = new Book(title, author, page_count, read_status)
+    myLibrary.push(new_book);
+    displayLibrary();
+    toggleModal();
+
+    const form = document.getElementById('book-form').reset();
+}
 
 
 function displayLibrary () {
@@ -108,14 +118,14 @@ function buildCard (book, index) {
 function toggleModal() {
     const modal = document.getElementById("add-book");
     if (addBookModal === false) {
-        addBookButton.disabled = true;
+        openBookModal.disabled = true;
         modal.style.display = 'block';
         addBookModal = true;
         freezePage();
     } else {
         modal.style.display = 'none';
         addBookModal = false;
-        addBookButton.disabled = false;
+        openBookModal.disabled = false;
         freezePage();
     }
 }
